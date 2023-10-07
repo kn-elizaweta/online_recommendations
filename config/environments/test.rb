@@ -60,4 +60,6 @@ Rails.application.configure do
 
 
   config.hosts << "www.example.com"
+  config.action_mailer.delivery_method = :test
+  config.active_job.queue_adapter = :test
 end

@@ -4,7 +4,7 @@ class Recommendation < ApplicationRecord
   after_create :send_recommendation_email
 
   def send_recommendation_email
-     patient = consultation_request.patient
-     PatientMailer.with(patient: patient).new_recommendation_email.deliver_now
+    patient = consultation_request.patient
+    PatientMailer.with(patient: patient).new_recommendation_email.deliver_later
   end
 end
